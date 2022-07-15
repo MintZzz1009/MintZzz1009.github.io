@@ -1,0 +1,10 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>MintZzz DevLog</title>
+        <link>http://MintZzz1009.github.io/</link>
+        <description>Welcome! This is Haksoo-ji&#39;s DevLog.</description>
+        <generator>Hugo -- gohugo.io</generator><language>ko</language><managingEditor>mintzzz1009@gmail.com (Haksoo-Ji)</managingEditor>
+            <webMaster>mintzzz1009@gmail.com (Haksoo-Ji)</webMaster>
+            <atom:link href="http://MintZzz1009.github.io/index.xml" rel="self" type="application/rss+xml" />
+        </channel>
+</rss>
