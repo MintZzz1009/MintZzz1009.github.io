@@ -3,8 +3,37 @@
         <title>MintZzz DevLog</title>
         <link>http://MintZzz1009.github.io/</link>
         <description>Welcome! This is Haksoo-ji&#39;s DevLog.</description>
-        <generator>Hugo -- gohugo.io</generator><language>ko</language><managingEditor>mintzzz1009@gmail.com (Haksoo-Ji)</managingEditor>
-            <webMaster>mintzzz1009@gmail.com (Haksoo-Ji)</webMaster>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>mintzzz1009@gmail.com (Haksoo-Ji)</managingEditor>
+            <webMaster>mintzzz1009@gmail.com (Haksoo-Ji)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 16 Jul 2022 00:04:01 &#43;0900</lastBuildDate>
             <atom:link href="http://MintZzz1009.github.io/index.xml" rel="self" type="application/rss+xml" />
-        </channel>
+        <item>
+    <title>First_post123</title>
+    <link>http://MintZzz1009.github.io/first_post123/</link>
+    <pubDate>Sat, 16 Jul 2022 00:04:01 &#43;0900</pubDate>
+    <author>Haksoo-Ji</author>
+    <guid>http://MintZzz1009.github.io/first_post123/</guid>
+    <description><![CDATA[<!-- 
+---
+weight: 4
+title: "Basic Markdown Syntax"
+date: 2019-12-01T21:57:40+08:00
+lastmod: 2020-01-01T16:45:40+08:00
+draft: false
+author: "Dillon"
+authorLink: "https://dillonzq.com"
+description: "This article shows the basic Markdown syntax and format."
+images: []
+resources:
+- name: "featured-image"
+  src: "featured-image.png"
+
+tags: ["Markdown", "HTML"]
+categories: ["Markdown"]
+
+lightgallery: true
+---
+-->
+<p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files.</p>]]></description>
+</item>
+</channel>
 </rss>
