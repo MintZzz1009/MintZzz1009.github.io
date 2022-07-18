@@ -10,7 +10,7 @@
     <title>First_post123</title>
     <link>http://MintZzz1009.github.io/first_post123/</link>
     <pubDate>Sat, 16 Jul 2022 00:04:01 &#43;0900</pubDate>
-    <author>Haksoo-Ji</author>
+    <author>Haksoo Ji</author>
     <guid>http://MintZzz1009.github.io/first_post123/</guid>
     <description><![CDATA[<!-- 
 ---
@@ -42,8 +42,8 @@ lightgallery: true
     <author>Haksoo Ji</author>
     <guid>http://MintZzz1009.github.io/second_post/</guid>
     <description><![CDATA[<div class="featured-image">
-                <img src="/Mint%20fabric" referrerpolicy="no-referrer">
-            </div>This is testing <description>.]]></description>
+                <img src="https://hugoloveit.com/basic-markdown-syntax/featured-image.png" referrerpolicy="no-referrer">
+            </div>This is summary description in front-matter.]]></description>
 </item>
 </channel>
 </rss>
