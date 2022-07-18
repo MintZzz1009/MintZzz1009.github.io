@@ -4,7 +4,7 @@
         <link>http://MintZzz1009.github.io/posts/</link>
         <description>All Posts | MintZzz DevLog</description>
         <generator>Hugo -- gohugo.io</generator><language>ko</language><managingEditor>mintzzz1009@gmail.com (Haksoo-Ji)</managingEditor>
-            <webMaster>mintzzz1009@gmail.com (Haksoo-Ji)</webMaster><lastBuildDate>Sat, 16 Jul 2022 00:04:01 &#43;0900</lastBuildDate><atom:link href="http://MintZzz1009.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>mintzzz1009@gmail.com (Haksoo-Ji)</webMaster><lastBuildDate>Mon, 18 Jul 2022 15:47:00 &#43;0900</lastBuildDate><atom:link href="http://MintZzz1009.github.io/posts/" rel="self" type="application/rss+xml" /><item>
     <title>First_post123</title>
     <link>http://MintZzz1009.github.io/first_post123/</link>
     <pubDate>Sat, 16 Jul 2022 00:04:01 &#43;0900</pubDate>
@@ -32,6 +32,16 @@ lightgallery: true
 ---
 -->
 <p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files.</p>]]></description>
+</item>
+<item>
+    <title>Second_post</title>
+    <link>http://MintZzz1009.github.io/second_post/</link>
+    <pubDate>Mon, 18 Jul 2022 15:47:00 &#43;0900</pubDate>
+    <author>Haksoo Ji</author>
+    <guid>http://MintZzz1009.github.io/second_post/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/Mint%20fabric" referrerpolicy="no-referrer">
+            </div>This is testing <description>.]]></description>
 </item>
 </channel>
 </rss>
