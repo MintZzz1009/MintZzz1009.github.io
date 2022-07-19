@@ -89,10 +89,10 @@ image 태그는 figure 태그를 대신할 수 있으면서 여러가지 옵션�
 {{< /admonition >}}
 ```
 <!-- 출력2 -->
-{{< image src="/images/sky_logo.png" title="TITLE: SKY" caption="Sky Logo from someone's instagram." height="50" width="50" src_s="/images/sky_logo.png" src_l="/images/sky_logo.png" >}}
+{{< image src="/images/sky_logo.png" title="TITLE: SKY" caption="Sky Logo from someone's instagram." height="20" width="20" src_s="/images/sky_logo.png" src_l="/images/sky_logo.png" >}}
 ```    
 *출력2 :*
-{{< image src="/images/sky_logo.png" title="TITLE: SKY" caption="Sky Logo from someone's instagram." height="50" width="50" src_s="/images/sky_logo.png" src_l="/images/sky_logo.png" >}}
+{{< image src="/images/sky_logo.png" title="TITLE: SKY" caption="Sky Logo from someone's instagram." height="20" width="20" src_s="/images/sky_logo.png" src_l="/images/sky_logo.png" >}}
   
 
 ***
@@ -104,9 +104,7 @@ image 태그는 figure 태그를 대신할 수 있으면서 여러가지 옵션�
 ```markdown
 {{</* Shortcode */>}}
 ```
-<br/>
-
-*출력 :*
+*출력 :*  
 {{</* Shortcode */>}}
   
   
@@ -123,6 +121,12 @@ E
 <br/>
 F
 ```
+A<br/>B
+C<br/><br/>D
+E
+<br/>
+F
+
 
 ### 공백문자 2칸 
 `space bar` 즉, 공백문자 2칸 입력 후 엔터를 입력한다.
@@ -157,6 +161,7 @@ A
 
 B
 ***
+
 
 ## Style
 ```markdown
