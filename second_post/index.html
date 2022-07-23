@@ -9,7 +9,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://MintZzz1009.github.io/second_post/" /><meta property="og:image" content="http://MintZzz1009.github.io/second_post/featured-image.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-07-18T15:47:00+09:00" />
-<meta property="article:modified_time" content="2022-07-23T11:31:30+09:00" /><meta property="og:site_name" content="MintZzz&#39;s DevLog" />
+<meta property="article:modified_time" content="2022-07-23T11:50:54+09:00" /><meta property="og:site_name" content="MintZzz&#39;s DevLog" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://MintZzz1009.github.io/second_post/featured-image.png"/>
@@ -29,8 +29,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/MintZzz1009.github.io\/second_post\/"
-        },"image": ["http:\/\/MintZzz1009.github.io\/images\/param_seo.png"],"genre": "posts","keywords": "Markdown, Java, Git, submodule, theme, LoveIt","wordcount":  582 ,
-        "url": "http:\/\/MintZzz1009.github.io\/second_post\/","datePublished": "2022-07-18T15:47:00+09:00","dateModified": "2022-07-23T11:31:30+09:00","publisher": {
+        },"image": ["http:\/\/MintZzz1009.github.io\/images\/param_seo.png"],"genre": "posts","keywords": "Markdown, Java, Git, submodule, theme, LoveIt","wordcount":  632 ,
+        "url": "http:\/\/MintZzz1009.github.io\/second_post\/","datePublished": "2022-07-18T15:47:00+09:00","dateModified": "2022-07-23T11:50:54+09:00","publisher": {
             "@type": "Organization",
             "name": "Haksoo Ji","logo": "http:\/\/MintZzz1009.github.io\/images\/avatar_hood-T-shirt.jpg"},"author": {
                 "@type": "Person",
@@ -117,7 +117,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Second_post</h1><h2 class="single-subtitle">Second_post&#39;s subtitle</h2><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/MintZzz1009" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Haksoo Ji</a></span>&nbsp;<span class="post-category">included in <a href="/categories/dev/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>dev</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-18">2022-07-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;582 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-18">2022-07-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;632 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -138,12 +138,14 @@
       <ul>
         <li><a href="#1-일반적인-방법---markdown-형식">1. 일반적인 방법 - markdown 형식</a>
           <ul>
-            <li><a href="#static-디렉터리-내부의-이미지-파일-불러오기">./static 디렉터리 내부의 이미지 파일 불러오기.</a></li>
-            <li><a href="#contentpoststhis_post-디렉터리-내부의-이미지-파일-불러오기">/content/posts/this_post 디렉터리 내부의 이미지 파일 불러오기.</a></li>
+            <li><a href="#static-디렉터리-내부의-이미지-파일-불러오기"><code>./static</code> 디렉터리 내부의 이미지 파일 불러오기.</a></li>
+            <li><a href="#contentpoststhis_post-디렉터리-내부의-이미지-파일-불러오기"><code>./content/posts/this_post</code> 디렉터리 내부의 이미지 파일 불러오기.</a></li>
+            <li><a href="#img-태그를-이용한-이미지-크기-조절"><code>&lt;img&gt;</code> 태그를 이용한 이미지 크기 조절</a></li>
+            <li><a href="#a-a-태그를-이용한-이미지-링크-생성법"><code>&lt;a&gt;</code>, <code>&lt;/a&gt;</code> 태그를 이용한 이미지 링크 생성법</a></li>
             <li><a href="#표table-안에-이미지와-캡션-넣기">표(table) 안에 이미지와 캡션 넣기.</a></li>
           </ul>
         </li>
-        <li><a href="#2-id-tag-사용">2. [id] tag 사용</a></li>
+        <li><a href="#2-id-tag-사용">2. <code>[id]</code> tag 사용</a></li>
         <li><a href="#3-short-codes-사용">3. short codes 사용</a>
           <ul>
             <li><a href="#figure">figure</a></li>
@@ -182,7 +184,7 @@
 </div><hr>
 <h2 id="여러가지-방법으로-이미지-파일-추가해보기">여러가지 방법으로 이미지 파일 추가해보기.</h2>
 <h3 id="1-일반적인-방법---markdown-형식">1. 일반적인 방법 - markdown 형식</h3>
-<h4 id="static-디렉터리-내부의-이미지-파일-불러오기">./static 디렉터리 내부의 이미지 파일 불러오기.</h4>
+<h4 id="static-디렉터리-내부의-이미지-파일-불러오기"><code>./static</code> 디렉터리 내부의 이미지 파일 불러오기.</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -202,7 +204,7 @@
         data-sizes="auto"
         alt="/second_post/tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg"
         title="Mint_block" width="3000" height="2250" /></p>
-<h4 id="contentpoststhis_post-디렉터리-내부의-이미지-파일-불러오기">/content/posts/this_post 디렉터리 내부의 이미지 파일 불러오기.</h4>
+<h4 id="contentpoststhis_post-디렉터리-내부의-이미지-파일-불러오기"><code>./content/posts/this_post</code> 디렉터리 내부의 이미지 파일 불러오기.</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -224,21 +226,60 @@
             alt="/second_post/tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg" width="3000" height="2250" />
     </a><figcaption class="image-caption">민트색 벽돌</figcaption>
     </figure></p>
+<h4 id="img-태그를-이용한-이미지-크기-조절"><code>&lt;img&gt;</code> 태그를 이용한 이미지 크기 조절</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;50&#34;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#34;30&#34;</span> <span class="p">/&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><em>출력 :</em>
+<img src="tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg" width="50" height="30" /></p>
+<h4 id="a-a-태그를-이용한-이미지-링크-생성법"><code>&lt;a&gt;</code>, <code>&lt;/a&gt;</code> 태그를 이용한 이미지 링크 생성법</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;30&#34;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#34;50&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;This is sample image&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><a href="#">
+  <img src="tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg" width="30" height="50" alt="This is sample image">
+</a>
 <h4 id="표table-안에-이미지와-캡션-넣기">표(table) 안에 이미지와 캡션 넣기.</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
+</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">| ![Mint_block](tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg |
+</span></span><span class="line"><span class="cl">|:-------:|
 </span></span><span class="line"><span class="cl">| <span class="ge">**</span>*민트색 벽돌*** |
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><em>출력 :</em>
-| ![Mint_block](tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg |
-| <em><strong>민트색 벽돌</strong></em> |</p>
-<h3 id="2-id-tag-사용">2. [id] tag 사용</h3>
+</div><p><em>출력 :</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">![Mint_block](tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><em><strong>민트색 벽돌</strong></em></td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-id-tag-사용">2. <code>[id]</code> tag 사용</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -252,29 +293,27 @@
 </span></span><span class="line"><span class="cl">![Mint_block][Mint_block]
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c">&lt;!-- refernce --&gt;</span>
-</span></span><span class="line"><span class="cl">[Mint_block]: tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg &#34;The Mint Block&#34;
+</span></span><span class="line"><span class="cl">[Mint_block]: /tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg &#34;The Mint Block&#34;
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><em>출력 :</em>
 ![Mint_block][Mint_block]
-[Mint_block]: tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg &ldquo;The Mint Block&rdquo;</p>
+[Mint_block]: /tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg &ldquo;The Mint Block&rdquo;</p>
 <p>순서를 바꾼다면?</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
-</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="c">&lt;!-- refernce --&gt;</span>
-</span></span><span class="line"><span class="cl">[Light_mint_fabric]: divazus-fabric-store-2VG1ggL5IuQ-unsplash.jpg &#34;The fabric of mint color&#34;
-</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[Light_mint_fabric]: /divazus-fabric-store-2VG1ggL5IuQ-unsplash.jpg &#34;The fabric of mint color&#34;
 </span></span><span class="line"><span class="cl">![Mint_fabric][Light_mint_fabric]
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><em>출력 :</em>
-[Light_mint_fabric]: divazus-fabric-store-2VG1ggL5IuQ-unsplash.jpg &ldquo;The fabric of mint color&rdquo;
+[Light_mint_fabric]: /divazus-fabric-store-2VG1ggL5IuQ-unsplash.jpg &ldquo;The fabric of mint color&rdquo;
 ![Mint_fabric][ Light_mint_fabric]</p>
 <h3 id="3-short-codes-사용">3. short codes 사용</h3>
 <h4 id="figure">figure</h4>
@@ -285,7 +324,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="c">&lt;!-- 출력1 --&gt;</span>
-</span></span><span class="line"><span class="cl"><figure><img src="sky_logo.png" width="50px" height="50ps"/><figcaption>
+</span></span><span class="line"><span class="cl"><figure><img src="sky_logo.png" width="50px" height="50px"/><figcaption>
             <h4>sky_logo</h4>
         </figcaption>
 </figure>
@@ -293,12 +332,12 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><em>출력1 :</em>
-<figure><img src="sky_logo.png" width="50px" height="50px"/><figcaption>
+<figure><img src="sky_logo.png" width="15" height="15"/><figcaption>
             <h4>sky_logo</h4>
         </figcaption>
 </figure>
 
-사진 사이즈는 50  * 50 입니다.</p>
+사진 사이즈는 50 * 50 입니다.</p>
 <h4 id="image">image</h4>
 <div class="details admonition info">
         <div class="details-summary admonition-title">
@@ -439,8 +478,8 @@ B</p>
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2022-07-23&nbsp;<a class="git-hash" href="www.github.com/MintZzz1009/commit/39d2e7a61715fc3d5f62d8e6ed5ae32f4487b426" target="_blank" title="commit by HaksooJi(mintzzz1009@gmail.com) 39d2e7a61715fc3d5f62d8e6ed5ae32f4487b426: rebuilding site Sat Jul 23 11:31:30     2022">
-                                    <i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>39d2e7a</a></span>
+                <span>Updated on 2022-07-23&nbsp;<a class="git-hash" href="www.github.com/MintZzz1009/commit/44d037c361ae920d39043ce68483618f03b84bc8" target="_blank" title="commit by HaksooJi(mintzzz1009@gmail.com) 44d037c361ae920d39043ce68483618f03b84bc8: rebuilding site Sat Jul 23 11:50:54     2022">
+                                    <i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>44d037c</a></span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"><span>

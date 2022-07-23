@@ -21,7 +21,7 @@ ___
 ## 여러가지 방법으로 이미지 파일 추가해보기.
 
 ### 1. 일반적인 방법 - markdown 형식 
-#### ./static 디렉터리 내부의 이미지 파일 불러오기.
+#### `./static` 디렉터리 내부의 이미지 파일 불러오기.
 ```markdown
 <!-- 파일 경로 = "/blog/static/images/file.img" -->
 ![Mint_block](tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg)
@@ -30,7 +30,7 @@ ___
 *출력 :*
 ![Mint_block](tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg)
 
-#### /content/posts/this_post 디렉터리 내부의 이미지 파일 불러오기.
+#### `./content/posts/this_post` 디렉터리 내부의 이미지 파일 불러오기.
 ```markdown
 <!-- 파일 경로 = "/blog/content/posts/second_post/file.img" -->
 ![Mint_block](tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg "민트색 벽돌")
@@ -39,39 +39,58 @@ ___
 *출력 :*
 ![Mint_block](tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg "민트색 벽돌")
 
+#### `<img>` 태그를 이용한 이미지 크기 조절
+```markdown
+<img src="tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg" width="50" height="30" />
+```
+*출력 :*
+<img src="tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg" width="50" height="30" />
+
+#### `<a>`, `</a>` 태그를 이용한 이미지 링크 생성법
+```markdown
+<a href="#">
+  <img src="tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg" width="30" height="50" alt="This is sample image">
+</a>
+```
+<a href="#">
+  <img src="tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg" width="30" height="50" alt="This is sample image">
+</a>
+
+
 #### 표(table) 안에 이미지와 캡션 넣기.
 ```markdown
 | ![Mint_block](tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg |
+|:-------:|
 | ***민트색 벽돌*** |
 ```
 *출력 :*
 | ![Mint_block](tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg |
+|:-------:|
 | ***민트색 벽돌*** |
 
 
-### 2. [id] tag 사용
+### 2. `[id]` tag 사용
 ```markdown
 <!-- [id] 태그 사용 --> 
 ![Mint_block][Mint_block]
 
 <!-- refernce -->
-[Mint_block]: tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg "The Mint Block"
+[Mint_block]: /tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg "The Mint Block"
 ```
   
 *출력 :*
 ![Mint_block][Mint_block]
-[Mint_block]: tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg "The Mint Block"
+[Mint_block]: /tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg "The Mint Block"
     
 순서를 바꾼다면?
 ```markdown
 <!-- refernce -->
-[Light_mint_fabric]: divazus-fabric-store-2VG1ggL5IuQ-unsplash.jpg "The fabric of mint color"
-
+[Light_mint_fabric]: /divazus-fabric-store-2VG1ggL5IuQ-unsplash.jpg "The fabric of mint color"
 ![Mint_fabric][Light_mint_fabric]
 ```
   
 *출력 :*
-[Light_mint_fabric]: divazus-fabric-store-2VG1ggL5IuQ-unsplash.jpg "The fabric of mint color"
+[Light_mint_fabric]: /divazus-fabric-store-2VG1ggL5IuQ-unsplash.jpg "The fabric of mint color"
 ![Mint_fabric][ Light_mint_fabric]
 
 
@@ -79,12 +98,12 @@ ___
 #### figure
 ```markdown
 <!-- 출력1 -->
-{{< figure src="sky_logo.png" title="sky_logo" height="50ps" width="50px" >}}
+{{< figure src="sky_logo.png" title="sky_logo" height="50px" width="50px" >}}
 ```
   
 *출력1 :*
-{{< figure src="sky_logo.png" title="sky_logo" height="50px" width="50px" >}}
-사진 사이즈는 50  * 50 입니다.
+{{< figure src="sky_logo.png" title="sky_logo" height="15" width="15" >}}
+사진 사이즈는 50 * 50 입니다.
 
 #### image
 {{< admonition info "This is info" false >}}
