@@ -113,10 +113,10 @@ image 태그는 figure 태그를 대신할 수 있으면서 여러가지 옵션�
 {{< /admonition >}}
 ```
 <!-- 출력2 -->
-{{< image src="/images/sky_logo.png" title="TITLE: SKY" caption="Sky Logo from someone's instagram." height="20px" width="20px" src_s="/images/sky_logo.png" src_l="/images/sky_logo.png" >}}
+{{< image src="sky_logo.png" title="TITLE: SKY" caption="Sky Logo from someone's instagram." height="40" width="40" src_s="/images/sky_logo.png" src_l="sky_logo.png" >}}
 ```    
 *출력2 :*
-{{< image src="/images/sky_logo.png" title="TITLE: SKY" caption="Sky Logo from someone's instagram." height="20px" width="20px" src_s="/images/sky_logo.png" src_l="/images/sky_logo.png" >}}
+{{< image src="sky_logo.png" title="TITLE: SKY" caption="Sky Logo from someone's instagram." height="40" width="40" src_s="/images/sky_logo.png" src_l="sky_logo.png" >}}
   
 
 ***
