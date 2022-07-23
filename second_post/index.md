@@ -1,8 +1,9 @@
 # Second_post
 
 
+This is summary of the second post.
+
 <!--more-->
-<!-- front-matter의 description 값이 공백일 경우, "<!--more-->" 위의 내용은 카테고리에서 이 포스트가 pre-viewed 될 때, sammary로 나타난다. -->
 
 # This is testing.
 

@@ -11,8 +11,8 @@
     <author>Haksoo Ji</author>
     <guid>http://MintZzz1009.github.io/second_post/</guid>
     <description><![CDATA[<div class="featured-image">
-                <img src="https://hugoloveit.com/basic-markdown-syntax/featured-image.png" referrerpolicy="no-referrer">
-            </div>This is summary description in front-matter.]]></description>
+                <img src="/featured-image.png" referrerpolicy="no-referrer">
+            </div><p>This is summary of the second post.</p>]]></description>
 </item>
 </channel>
 </rss>
