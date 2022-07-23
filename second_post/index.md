@@ -24,11 +24,11 @@ ___
 #### ./static 디렉터리 내부의 이미지 파일 불러오기.
 ```markdown
 <!-- 파일 경로 = "/blog/static/images/file.img" -->
-![Mint_block](/images/tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg)
+![Mint_block](tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg)
 ```
 
 *출력 :*
-![Mint_block](/images/tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg)
+![Mint_block](tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg)
 
 #### /content/posts/this_post 디렉터리 내부의 이미지 파일 불러오기.
 ```markdown
@@ -44,6 +44,9 @@ ___
 | ![Mint_block](tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg |
 | ***민트색 벽돌*** |
 ```
+*출력 :*
+| ![Mint_block](tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg |
+| ***민트색 벽돌*** |
 
 
 ### 2. [id] tag 사용
@@ -76,11 +79,12 @@ ___
 #### figure
 ```markdown
 <!-- 출력1 -->
-{{< figure src="/images/sky_logo.png" title="sky_logo" height="50" width="50" >}}
+{{< figure src="sky_logo.png" title="sky_logo" height="50ps" width="50px" >}}
 ```
   
 *출력1 :*
-{{< figure src="/images/sky_logo.png" title="sky_logo" height="50" width="50" >}}
+{{< figure src="sky_logo.png" title="sky_logo" height="50px" width="50px" >}}
+사진 사이즈는 50  * 50 입니다.
 
 #### image
 {{< admonition info "This is info" false >}}
@@ -90,10 +94,10 @@ image 태그는 figure 태그를 대신할 수 있으면서 여러가지 옵션�
 {{< /admonition >}}
 ```
 <!-- 출력2 -->
-{{< image src="/images/sky_logo.png" title="TITLE: SKY" caption="Sky Logo from someone's instagram." height="20" width="20" src_s="/images/sky_logo.png" src_l="/images/sky_logo.png" >}}
+{{< image src="/images/sky_logo.png" title="TITLE: SKY" caption="Sky Logo from someone's instagram." height="20px" width="20px" src_s="/images/sky_logo.png" src_l="/images/sky_logo.png" >}}
 ```    
 *출력2 :*
-{{< image src="/images/sky_logo.png" title="TITLE: SKY" caption="Sky Logo from someone's instagram." height="20" width="20" src_s="/images/sky_logo.png" src_l="/images/sky_logo.png" >}}
+{{< image src="/images/sky_logo.png" title="TITLE: SKY" caption="Sky Logo from someone's instagram." height="20px" width="20px" src_s="/images/sky_logo.png" src_l="/images/sky_logo.png" >}}
   
 
 ***
