@@ -47,6 +47,7 @@ ___
 <img src="tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg" width="50" height="30" />
 
 #### `<a>`, `</a>` 태그를 이용한 이미지 링크 생성법
+HTML 태그지만 Markdown 문서에서도 적용된다.
 ```markdown
 <a href="#">
   <img src="tools-for-motivation-m1DZR0Q9c6w-unsplash.jpg" width="30" height="50" alt="This is sample image">
