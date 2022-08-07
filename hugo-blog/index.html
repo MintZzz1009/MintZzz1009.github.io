@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>[Hugo-blog] Hugo, GitHub Pages로 블로그 만들기 - MintZzz DevLog</title><meta name="Description" content="Welcome! This is Haksoo-ji&#39;s DevLog."><meta property="og:title" content="[Hugo-blog] Hugo, GitHub Pages로 블로그 만들기" />
+<meta property="og:description" content="기술 블로그를 통해 내가 배우는 내용 등을 한번 더 정리하는 것이 꼭 필요하다는 사실을 알았다. 여러가지 블로그들이 있지만 기술 블로그로 활용하기에 가장 효율적이고 적절한 것은 무엇일까 구글링을 하면서 다른 분들의 블로그도 많이 참조하였다. 그렇게 최종적으로 결정한 방법은 Hugo라는 Static Site generator를 활용하는 것이었다.
+이번 포스팅에서는 내가 여러 시행착오와 구글링을 통해 나름대로 이해하게 된 Hugo를 활용한 정적 사이트(static site) 개발과 배포 방법에 대한 내용을 정리해보고자 한다.
+아래 내용들은 보다 명확한 정리를 위해서 새로운 깃헙계정으로 다른 Hugo-blog를 만들면서 작성했다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://MintZzz1009.github.io/hugo-blog/" /><meta property="og:image" content="http://MintZzz1009.github.io/images/sky_logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-08-04T21:54:02+09:00" />
+<meta property="article:modified_time" content="2022-08-06T17:55:11+09:00" /><meta property="og:site_name" content="MintZzz&#39;s DevLog" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://MintZzz1009.github.io/images/sky_logo.png"/>
+
+<meta name="twitter:title" content="[Hugo-blog] Hugo, GitHub Pages로 블로그 만들기"/>
+<meta name="twitter:description" content="기술 블로그를 통해 내가 배우는 내용 등을 한번 더 정리하는 것이 꼭 필요하다는 사실을 알았다. 여러가지 블로그들이 있지만 기술 블로그로 활용하기에 가장 효율적이고 적절한 것은 무엇일까 구글링을 하면서 다른 분들의 블로그도 많이 참조하였다. 그렇게 최종적으로 결정한 방법은 Hugo라는 Static Site generator를 활용하는 것이었다.
+이번 포스팅에서는 내가 여러 시행착오와 구글링을 통해 나름대로 이해하게 된 Hugo를 활용한 정적 사이트(static site) 개발과 배포 방법에 대한 내용을 정리해보고자 한다.
+아래 내용들은 보다 명확한 정리를 위해서 새로운 깃헙계정으로 다른 Hugo-blog를 만들면서 작성했다."/>
+<meta name="application-name" content="[app icon config title]">
+<meta name="apple-mobile-web-app-title" content="[app icon config title]"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://MintZzz1009.github.io/hugo-blog/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "[Hugo-blog] Hugo, GitHub Pages로 블로그 만들기",
+        "inLanguage": "ko",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/MintZzz1009.github.io\/hugo-blog\/"
+        },"image": ["http:\/\/MintZzz1009.github.io\/images\/param_seo.png"],"genre": "posts","keywords": "hugo, blog, static-site, submodule, github pages, markdown","wordcount":  6712 ,
+        "url": "http:\/\/MintZzz1009.github.io\/hugo-blog\/","datePublished": "2022-08-04T21:54:02+09:00","dateModified": "2022-08-06T17:55:11+09:00","publisher": {
+            "@type": "Organization",
+            "name": "Haksoo Ji","logo": "http:\/\/MintZzz1009.github.io\/images\/avatar_hood-T-shirt.jpg"},"author": {
+                "@type": "Person",
+                "name": "Haksoo Ji"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="MintZzz DevLog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/sky_logo.png"
+        data-srcset="/images/sky_logo.png, /images/sky_logo.png 1.5x, /images/sky_logo.png 2x"
+        data-sizes="auto"
+        alt="/images/sky_logo.png"
+        title="/images/sky_logo.png" />MintZzz</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="MintZzz DevLog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/sky_logo.png"
+        data-srcset="/images/sky_logo.png, /images/sky_logo.png 1.5x, /images/sky_logo.png 2x"
+        data-sizes="auto"
+        alt="/images/sky_logo.png"
+        title="/images/sky_logo.png" />MintZzz</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">[Hugo-blog] Hugo, GitHub Pages로 블로그 만들기</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/MintZzz1009" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Haksoo Ji</a></span>&nbsp;<span class="post-category">included in <a href="/categories/dev/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>dev</a>&nbsp;<a href="/categories/hugo-blog/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>hugo-blog</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-08-04">2022-08-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;6712 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;14 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/hugo-blog/hugo.jpg"
+        data-srcset="/hugo-blog/hugo.jpg, /hugo-blog/hugo.jpg 1.5x, /hugo-blog/hugo.jpg 2x"
+        data-sizes="auto"
+        alt="/hugo-blog/hugo.jpg"
+        title="/hugo-blog/hugo.jpg" width="1280" height="313" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#hugo---정적-사이트-생성기-static-site-generators">HUGO - 정적 사이트 생성기 (Static Site Generators)</a></li>
+    <li><a href="#기본-개념">기본 개념</a></li>
+    <li><a href="#hugo-설치">Hugo 설치</a></li>
+    <li><a href="#들어가기-전-알아야-할-hugo와-git의-기능들">들어가기 전 알아야 할 Hugo와 Git의 기능들</a>
+      <ul>
+        <li><a href="#themes-디렉터리">themes 디렉터리</a></li>
+        <li><a href="#public-디렉터리">public 디렉터리</a></li>
+        <li><a href="#submodule과-push">Submodule과 Push</a></li>
+      </ul>
+    </li>
+    <li><a href="#process-a-id-pub-procesa">Process <a id= "pub-proces"></a></a>
+      <ul>
+        <li><a href="#1-프로젝트-생성">1. 프로젝트 생성</a></li>
+        <li><a href="#2-테마-다운로드">2. 테마 다운로드</a></li>
+        <li><a href="#3-configtomlor-yaml-json-수정">3. config.toml(or yaml, json) 수정</a></li>
+        <li><a href="#4-컨텐츠-생성">4. 컨텐츠 생성</a></li>
+        <li><a href="#5-github-pages-저장소-초기화">5. GitHub Pages 저장소 초기화</a></li>
+        <li><a href="#6-build">6. Build</a></li>
+        <li><a href="#7-git-repository-push">7. Git Repository Push</a></li>
+        <li><a href="#8-쉘-스크립트를-이용한-자동화">8. 쉘 스크립트를 이용한 자동화</a></li>
+      </ul>
+    </li>
+    <li><a href="#마치며">마치며</a></li>
+    <li><a href="#도움받은-블로그">도움받은 블로그</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>기술 블로그를 통해 내가 배우는 내용 등을 한번 더 정리하는 것이 꼭 필요하다는 사실을 알았다. 여러가지 블로그들이 있지만 기술 블로그로 활용하기에 가장 효율적이고 적절한 것은 무엇일까 구글링을 하면서 다른 분들의 블로그도 많이 참조하였다. 그렇게 최종적으로 결정한 방법은 Hugo라는 Static Site generator를 활용하는 것이었다.
+이번 포스팅에서는 내가 여러 시행착오와 구글링을 통해 나름대로 이해하게 된 Hugo를 활용한 정적 사이트(static site) 개발과 배포 방법에 대한 내용을 정리해보고자 한다.</p>
+<p><em><em>아래 내용들은 보다 명확한 정리를 위해서 새로운 깃헙계정으로 다른 Hugo-blog를 만들면서 작성했다.</em></em></p>
+<h1 id="hugo-github-pages로-블로그-만들기">Hugo, GitHub Pages로 블로그 만들기</h1>
+<ol>
+<li>GitHub Repository를 활용한 소스 관리
+<ul>
+<li>submodule 활용</li>
+<li>.gitognore 활용</li>
+</ul>
+</li>
+<li>GitHub Pages와 Netlify를 통한 배포</li>
+<li>쉘 스크립트와 GitHub Actions를 이용한 자동화
+<br></li>
+</ol>
+<p>위의 목록들은 Hugo로 블로그를 만드는 방법을 구글링 했을 때 자주 보이는 방법들을 기능에 따라 대략적으로 정리한 것이다.
+나는 <code>username.github.io</code> 라는 도메인이 멋있어 보여서 GitHub Pages를 사용하기로 결정했고, 처음 빌드와 배포를 하는 것이다보니 직접 그 과정을 보고 싶어서 바로 자동화를 시켜주는 GitHub Actions는 나중에 배워보기로 하고 <code>bash</code>에서 커맨드를 하나하나 먼저 입력해본 후 쉘 스크립트 파일을 활용해서 자동화해보기로 했다.</p>
+<p>나머지 방법들이 내가 선택한 방법에 비해 안좋은 방법은 아니다. Netlify를 이용한 배포는 아주 편리하고 효율적이었으며 특히 평소에 배워보고 싶다고 생각한 GitHub Actions를 사용하는 방법은 나의 호기심을 자극했다. 그냥 하나씩 다 해볼까 라는 생각이 순간 뇌리를 스쳤지만 다행히 그 동안의 많은 삽질을 통해 생겨난 나의 직관이 그러다가는 올 해 취업은 못할거라고 말해줘서 중간에 단호하게 그만두었다. 이미 하나의 방법만을 이해하고 블로그를 구축하는 데에도 오랜 시간이 걸렸기에, 아쉽지만 담가놓은 발을 빼면서 나머지는 정해놓은 공부 목표를 끝낸 후에 조금씩 공부해보기로 하였다.</p>
+<hr>
+<h2 id="hugo---정적-사이트-생성기-static-site-generators">HUGO - 정적 사이트 생성기 (Static Site Generators)</h2>
+<p>정적 사이트 생성기(static site generator)와 Hugo에 대해서는 이미 여러 사이트에서 설명하고 있으니 이 글에서는 참조로 대신하겠다.</p>
+<ul>
+<li><a href="https://gohugo.io/about/benefits/" target="_blank" rel="noopener noreffer ">The Benefits of Static Site Generators - HUGO 공식사이트</a></li>
+<li><a href="https://blog.lgcns.com/2336" target="_blank" rel="noopener noreffer ">오픈소스 블로그 기술의 새 바람! 정적 페이지란? - LG CNS</a></li>
+<li><a href="https://62che.com/blog/vuepress/%EC%A0%95%EC%A0%81-%EC%82%AC%EC%9D%B4%ED%8A%B8-%EC%83%9D%EC%84%B1%EA%B8%B0%EB%9E%80.html#%E1%84%89%E1%85%A5%E1%84%83%E1%85%AE" target="_blank" rel="noopener noreffer ">정적사이트 생성기란 - 유기체의 다락방</a></li>
+</ul>
+<hr>
+<h2 id="기본-개념">기본 개념</h2>
+<p>Hugo를 이용해서 정적 사이트를 생성하는 과정을 간단화 하면 다음과 같다.
+<div class="mermaid" id="id-1"></div></p>
+<p>좀 더 과정을 구체화하여 도식화해봤다.</p>
+<img src="hugo_blog1.jpg">
+<hr>
+<h2 id="hugo-설치">Hugo 설치</h2>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Hugo Installation<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>블로그 생성을 위해 Hugo 설치를 한다면, 블로그에 적용할 테마를 먼저 선정하는 것이 낫다. 아주 정적인 페이지를 구현하고자 한다면 일반 버젼을 설치해도 상관없지만 어느정도 <strong>동적인 디자인을 원한다면
+extended 버젼을 설치해야 한다</strong>. 자세한 사항은 해당 테마 GitHub저장소의 README.md나 Demo사이트, Document 등에 잘 설명되어 있을 것이다.
+각 테마에서 설명해주는 것을 꼼꼼히 읽기를 권한다.(Hugo의 Extended 버젼은 Sass와 SCSS를 지원한다.)</p>
+<p><a href="https://gohugo.io/getting-started/installing/" target="_blank" rel="noopener noreffer ">설치과정(공식사이트)</a><br>
+<a href="https://themes.gohugo.io/" target="_blank" rel="noopener noreffer ">테마 고르기</a></p>
+</div>
+        </div>
+    </div>
+<hr>
+<h2 id="들어가기-전-알아야-할-hugo와-git의-기능들">들어가기 전 알아야 할 Hugo와 Git의 기능들</h2>
+<p><code>$ hugo new site [hugo-blog]</code> 명령어를 실행하면 Hugo는 &ldquo;hugo-blog&quot;라는 이름으로 Directory Structure를 구성한다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">user@장치이름 MINGW64 /c/github/hugo-blog <span class="o">(</span>main<span class="o">)</span>
+</span></span><span class="line"><span class="cl">$ tree
+</span></span><span class="line"><span class="cl">.
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- archetypes
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   <span class="sb">`</span>-- default.md
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- config.toml
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- content
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- data
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- layouts
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- public
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- static
+</span></span><span class="line"><span class="cl"><span class="sb">`</span>-- themes
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="m">7</span> directories, <span class="m">2</span> files
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>루트 디렉터리를 <code>/hugo-blog/</code>(= <code>./</code>)로 놓겠다. 기본적인 블로그 생성을 위해서 <code>./public/</code>, <code>./themes/</code>의 역할을 아는 것이 중요하다.</p>
+<h3 id="themes-디렉터리">themes 디렉터리</h3>
+<p>선호하는 테마를 선택하여 hugo-blog에 적용하려면 <code>./themes/your-theme/</code> 하위에 <code>$ git clone</code>이나 <code>$ git submodule add</code>나 zip 파일을 다운로드 해야 한다.
+테마 파일의 디렉터리 구조는 우리가 생성한 hugo-blog의 구조와 거의 유사하다. Hugo에서는 theme overriding을 지원하기 때문에 우리는 <code>./themes/</code> 의 코드를 수정하지 않아도 된다.
+오히려 보통 submodule로 테마를 설치하기 때문에 코드를 수정하면 <code>$ git push</code>를 할 때 충돌이 나게 된다.
+기회가 된다면 Hugo의 theme overriding에 대해서는 추후에 테마를 커스터마이징하는 포스팅에서 더 자세하게 다뤄보겠다.</p>
+<h3 id="public-디렉터리">public 디렉터리</h3>
+<p>Hugo를 통해 컨텐츠 즉 게시물을 markdown으로 작성하려고 한다면 <code>hugo new [post/file_name.md]</code>를 실행한다. 그러면 <code>./content/</code>하위에 다음과 같이 파일이 생성된다.
+(테마에 따라 post/file_name.md 가 아니라 posts/file_name.md 를 해야하는 경우도 있으니 주의해야한다.)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">user@장치이름 MINGW64 /c/github/hugo-blog <span class="o">(</span>main<span class="o">)</span>
+</span></span><span class="line"><span class="cl">$ tree
+</span></span><span class="line"><span class="cl">.
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- archetypes
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   <span class="sb">`</span>-- default.md
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- config.toml
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- content
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   <span class="sb">`</span>-- post
+</span></span><span class="line"><span class="cl"><span class="p">|</span>       <span class="sb">`</span>-- file_name.md
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- data
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- layouts
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- public
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- resources
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   <span class="sb">`</span>-- _gen
+</span></span><span class="line"><span class="cl"><span class="p">|</span>       <span class="p">|</span>-- assets
+</span></span><span class="line"><span class="cl"><span class="p">|</span>       <span class="sb">`</span>-- images
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- static
+</span></span><span class="line"><span class="cl"><span class="sb">`</span>-- themes
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="m">12</span> directories, <span class="m">3</span> files
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>배포를 위해서 <code>$ hugo -t [테마-이름]</code> 명령어로 빌드를 하였을 때, 빌드된 파일들은 <code>./public/</code>하위에 다음과 같이 생성된다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">user@장치이름 MINGW64 /c/github/hugo-blog <span class="o">(</span>main<span class="o">)</span>
+</span></span><span class="line"><span class="cl">$ tree
+</span></span><span class="line"><span class="cl">.
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- archetypes
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   <span class="sb">`</span>-- default.md
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- config.toml
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- content
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   <span class="sb">`</span>-- post
+</span></span><span class="line"><span class="cl"><span class="p">|</span>       <span class="sb">`</span>-- file_name.md
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- data
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- layouts
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- public
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   <span class="p">|</span>-- categories
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   <span class="p">|</span>   <span class="sb">`</span>-- index.xml
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   <span class="p">|</span>-- index.xml
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   <span class="p">|</span>-- sitemap.xml
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   <span class="sb">`</span>-- tags
+</span></span><span class="line"><span class="cl"><span class="p">|</span>       <span class="sb">`</span>-- index.xml
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- resources
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   <span class="sb">`</span>-- _gen
+</span></span><span class="line"><span class="cl"><span class="p">|</span>       <span class="p">|</span>-- assets
+</span></span><span class="line"><span class="cl"><span class="p">|</span>       <span class="sb">`</span>-- images
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- static
+</span></span><span class="line"><span class="cl"><span class="sb">`</span>-- themes
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="m">14</span> directories, <span class="m">7</span> files
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="submodule과-push">Submodule과 Push</h3>
+<p><code>./public/</code>은 Hugo를 통해 빌드된 파일들로 구성되어 있다. 따라서 배포용 remote repository(GitHub Pages 기능을 담당하는)에 push되어야 한다.</p>
+<p>Git의 submodule 기능을 활용해서 <code>./public/</code>을 상위 저장소(<code>/hugo-blog/</code>)의 main module과 분리하여 GitHub에 push한다.
+로컬에서 <code>./public/</code>은 <code>/hugo-blog/</code>하위에 있지만 submodule로 생성되었기 때문에 <code>/hugo-blog/</code>가 푸시되는 remote repository의 <code>./public/</code>은 커밋으로 취급되어 표시된다. 그리고 <code>./public/</code>을 클릭하면 디렉터리가 Push된 저장소인 GitHub Pages를 통해 배포되는 <code>username.github.io</code> 저장소로 연결된다.</p>
+<ul>
+<li>
+<p>submodule을 이용한 방법의 장점
+원본 소스와 배포용 소스를 따로 저장소를 나눠서 관리할 수 있으며, 그리고 타인이 리모트 저장소를 clone할 때, 원본 소스 저장소를 clone하면 submodule로 생성된 배포용 소스 저장소까지 한번에 clone할 수 있다는 점이 편리하다.</p>
+</li>
+<li>
+<p>submodule 사용시 주의할 점
+이 방법으로 blog를 생성할 때 주의할 점은 submodule을 추가하기 전에 상위 local 저장소를 먼저 초기화해야하고, 나중에 리모트 저장소에 Push를 할 때에는 submodule로 생성된 저장소를 먼저 Push한 후에 상위 저장소를 Push 해야 한다는 것이다.</p>
+</li>
+</ul>
+<p>Hugo에서 <code>./public/</code>, <code>./themes/</code> 디렉터리의 기능이 어느정도 이해가 된다면 두 개의 디렉터리에 Submodule을 추가하는 이유도 이해할 수 있을 것이다.</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Tip<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">만약 메인프로젝트의 소스를 GitHub에 푸시하지 않고 Local에서 관리하며, 배포를 목적으로 GitHub Pages를 활용하고자 한다면 아래 Process에서 <a href="#4-%ec%bb%a8%ed%85%90%ec%b8%a0-%ec%83%9d%ec%84%b1" rel="">4. 컨텐츠 생성</a>까지만 진행한 후, <code>$hugo -t 테마-이름</code>으로 빌드를 실행하고 <code>./public/</code>으로 이동하여 GitHub Pages 전용 리모트 저장소에 푸시하면 자동으로 배포가 될 것이다.</div>
+        </div>
+    </div>
+<hr>
+<h2 id="process-a-id-pub-procesa">Process <a id= "pub-proces"></a></h2>
+<p>blog 생성 과정을 좀 더 자세하게 단계별로 정리해본다.</p>
+<ul>
+<li><a href="#1-%ed%94%84%eb%a1%9c%ec%a0%9d%ed%8a%b8-%ec%83%9d%ec%84%b1" rel="">1. 프로젝트 생성</a></li>
+<li><a href="#2-%ed%85%8c%eb%a7%88-%eb%8b%a4%ec%9a%b4%eb%a1%9c%eb%93%9c" rel="">2. 테마 다운로드</a></li>
+<li><a href="#3-configtomlor-yaml-json-%ec%88%98%ec%a0%95" rel="">3. config.toml(or yaml, json) 수정</a></li>
+<li><a href="#4-%ec%bb%a8%ed%85%90%ec%b8%a0-%ec%83%9d%ec%84%b1" rel="">4. 컨텐츠 생성</a></li>
+<li><a href="#5-github-pages-%ec%a0%80%ec%9e%a5%ec%86%8c-%ec%b4%88%ea%b8%b0%ed%99%94" rel="">5. GitHub Pages 저장소 초기화</a></li>
+<li><a href="#6-build" rel="">6. Build</a></li>
+<li><a href="#7-git-repository-push" rel="">7. Git Repository Push</a></li>
+<li><a href="#8-%ec%89%98-%ec%8a%a4%ed%81%ac%eb%a6%bd%ed%8a%b8%eb%a5%bc-%ec%9d%b4%ec%9a%a9%ed%95%9c-%ec%9e%90%eb%8f%99%ed%99%94" rel="">8. 쉘 스크립트를 이용한 자동화</a></li>
+</ul>
+<h3 id="1-프로젝트-생성">1. 프로젝트 생성</h3>
+<ul>
+<li><code>$ hugo new site [hugo-blog]</code> 를 실행하면 hugo-blog 라는 이름의 프로젝트가 현재 위치에 생성된다. 경로설정을 하고 싶다면 <code>hugo-blog</code> 대신 <code>../user1/hugo-blog</code> 등으로 입력하면 된다.</li>
+<li><code>/hugo-blog/</code>로 이동해서 <code>$ git init</code> 을 통해 로컬 저장소를 초기화 시킨다. 다음 순서에서 리모트 저장소에 있는 테마를 submodule로 추가하기 위해서는 main module의 역할을 하는 저장소가 반드시 먼저 초기화되어야 한다.</li>
+</ul>
+<h3 id="2-테마-다운로드">2. 테마 다운로드</h3>
+<p><a href="https://themes.gohugo.io/" target="_blank" rel="noopener noreffer ">테마 고르기</a>를 통해서 취향에 맞는 테마를 고른다. 나는 <a href="https://themes.gohugo.io/themes/hugo-theme-stack/" target="_blank" rel="noopener noreffer ">hugo-theme-stack</a> 이라는 테마를 적용해보겠다.
+테마를 다운로드하는 방법은 3가지가 있다.</p>
+<ul>
+<li>Download Zip<br>
+별로 추천하지 않는다. git을 활용하는 것에 비해 불편하고 저장공간을 낭비하게 된다.</li>
+<li><code>$ git clone</code><br>
+가장 간단한 방법이다. <code>./themes/hugo-theme-stack</code> 하위에 파일들이 생성된다. 단, 원본 소스를 github를 통해서 관리할 수 없게된다. 왜냐하면 git clone을 사용할 경우, submodule이 아니라 main module로 작동하게 되기 때문이다. 만약 clone을 사용하여서 hugo-blog 하위에 <code>.git</code> 파일이 생성되면 hugo-blog는 정상적인 커밋을 가질 수 없게 되고 push할 경우 충돌이 나게된다.(이 경우 <code>./themes/hugo-theme-stack</code> 하위에 생성된 <code>.git</code>파일을 제거하면 동작하지만 비효율적인 방법이라고 생각되어 추천하지 않는다.)<br>
+만약 원본 소스를 GitHub에 푸시할 생각이 없고 <code>./public/</code> 디렉터리만 GitHub Pages 저장소(username.github.io)에 푸시하여 배포하려고 한다면 가장 간편한 방법으로 선택할 수 있을 것이다. 다만 주기적으로 테마 저장소가 업데이트 되어서 나도 테마의 소스 코드를 자주 업데이트하려는 사람에게는 이 방법을 권하지 않는다.</li>
+<li><code>$ git submodule add [저장소-URL] [themes/테마-이름]</code><br>
+가장 일반적인 방법이다. 대부분의 사람들이 사용한다. <code>/hugo-blog/</code>를 푸시할 일반적인 리모트 저장소와 <code>./public/</code>을 푸시할 GitHub Pages 저장소를 따로 운영하게 된다. 블로그 커스터마이징 등을 목적으로 원본 소스와 배포용 소스를 모두 관리하려고 한다면 이 방법이 편리할 것이다. 또한 리모트 저장소에서도 저장공간을 차지하지 않고 커밋으로 인식하기 때문에 효율적이다. 테마를 최신으로 유지하는 것도 간편한 일이 된다.</li>
+</ul>
+<h3 id="3-configtomlor-yaml-json-수정">3. config.toml(or yaml, json) 수정</h3>
+<p>Hugo의 테마 디렉터리에는 보통 <code>/exampleSite/</code>가 존재한다. 디렉터리를 살펴보면 예시로 적용된 게시물 컨텐츠들과 블로그의 Configuration File이 포함되어 있다. 이 파일을 이용하면 쉽고 간편하게 테마에 맞는 설정을 적용할 수 있다. Hugo는 기본적으로 <code>config.toml</code>, <code>config.yaml</code>, <code>config.json</code>을 Configuration File로 사용한다. 기본적으로 <code>config.toml</code>이 생성되지만 각 테마마다 사용하는 확장자가 다르므로 제공해주는 파일을 적용하는 것이 편리할 것이다.(<code>./themes/테마-이름/</code> 에도 <code>config.toml</code> 파일이 존재하지만 default 값으로 생성되어 값이 없는 것이 많기 때문에 일일히 찾아서 입력하는 것보다 exampleSite의 config.toml을 사용하는 것을 추천한다.)</p>
+<ul>
+<li><code>./config.toml</code> 삭제</li>
+<li><code>./themes/테마-이름/exampleSite/config.toml</code> 복사하여 <code>./</code> 에 붙여넣기(잘라내기나 어떤 이유로든 테마 디렉터리에 변경사항이 생기지 않도록 해야한다.)</li>
+<li>붙여넣은 <code>config.toml</code> 내용 수정. 아래는 예시이다.
+<table>
+<thead>
+<tr>
+<th style="text-align:center">config.toml</th>
+<th style="text-align:center">config.yaml</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="blog_config2.jpg"></td>
+<td style="text-align:center"><img src="blog_config1.jpg"></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h3 id="4-컨텐츠-생성">4. 컨텐츠 생성</h3>
+<p>Hugo에서 블로그 포스팅을 위해서 <code>file_name.md</code>라는 파일을 생성하기 위해서는 다음 명령어가 필요하다. <code>$ hugo new [post/file_name.md]</code>. 실행하면 <code>./content/post/file_name.md</code> 경로로 컨텐츠가 생성된다. 생성된 파일을 VScode를 사용하여 파일을 열면</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">title: &#34;file_name&#34;
+</span></span><span class="line"><span class="cl">date: &#34;명령어 실행시점의 시간값&#34;
+</span></span><span class="line"><span class="cl">draft: true
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">---
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>를 확인할 수 있다. 맨 위의 <code>---</code>과 그 다음 나타나는 <code>---</code>까지는 front-matter의 영역이다. Hugo는 markdown 문서에 front-matter 값들을 설정할 수 있게 해준다. 컨텐츠의 내용은 그 아래부터 적용된다.</p>
+<ul>
+<li>date의 시간값은 <code>$ hugo new post/file_name.md</code>를 실행할 때 자동으로 입력된다.</li>
+<li>draft값이 true인 포스팅은 별도의 옵션이 없으면 빌드나 렌더링에 포함되지 되지 않는다. 공백이나 false로 값을 변경해주자.</li>
+<li>테스트를 위해 내용 부분에 <code>Hello, Hugo-blog :)</code> 등을 입력한 후 저장해보자.</li>
+<li><code>$ hugo server</code>를 실행하면 파일이 렌더링된 모습을 로컬접속으로 실시간으로 확인할 수 있다. markdown 파일을 수정하면서 실시간으로 확인해보자. Hugo의 빠른 속도가 가지는 장점이 가장 부각되는 기능이 아닐까 생각된다.(draft 값이 true인 문서의 렌더링된 모습도 보고 싶다면 <code>$hugo server -D</code>를 실행하면 된다.)
+<img src="hugo_server.jpg"></li>
+</ul>
+<h3 id="5-github-pages-저장소-초기화">5. GitHub Pages 저장소 초기화</h3>
+<p>이제는 정적 사이트를 구성하기 위해서 빌드과정이 필요하다. Hugo는 <code>./content/</code>에 있는 자료들을 빌드하여 <code>./public/</code>에 보내게 된다. 그러나 지금 바로 빌드과정으로 들어가면 <code>./public/</code>은 <code>/hugo-blog/</code> 깃 저장소의 <code>.git</code>에 의해 커밋으로 취급되어 내부의 빌드된 파일들을 GitHub Pages 리모트 저장소에 푸시할 수 없게된다. <em><strong>따라서 기존에 존재하는 <code>./public</code>을 삭제한 후, GitHub Pages 리모트 저장소를 새로 생성한 로컬의 public 디렉터리에 submodule로 추가해야 한다.</strong></em></p>
+<ul>
+<li>
+<p>먼저 GitHub에 로그인하여 GitHub Pages 전용 repository를 새로 생성한다. 주의할 것은 repository name을 설정할 때 반드시 <code>username.github.io</code> 형식을 취해야 한다는 것이다.(Pro 계정이 아니라면 Repository를 Public으로 설정해야 한다.)<br>
+Create repository를 클릭한 후, README.md 파일 등을 생성하여 main branch가 생성되도록 한다.<br><img src="blog_github_pages1.jpg" height="500"></p>
+</li>
+<li>
+<p>저장소가 생성되면  상단의 Repository 탭에서 Settings를 클릭하고, 좌측 메뉴에서 Pages를 클릭한다. 블로그가 main branch에서 deploy 될 수 있도록 다음 사진과 같이 설정한다.<br><img src="blog_github_pages2.jpg" height="500"><br>Custom domain을 따로 구입해서 사용하는 것이 아니라면 Source와 Branch 항목만 설정하면 된다. 우리는 Jekyll이 아니라 Hugo를 사용했기 때문에 테마 항목도 넘어간다.</p>
+</li>
+<li>
+<p>Personal access tokens가 없다면 생성한다.</p>
+</li>
+<li>
+<p>기존에 생성된 <code>./public/</code>을 삭제한다.</p>
+</li>
+<li>
+<p><code>$ git submodule add -b main [리모트 저장소 URL] public</code> 을 실행한다. GitHub에서 저장소를 생성한 후, 아직 branch가 생성되기 전이기 때문에 <code>-b main</code> 옵션으로 main 브랜치까지 자동으로 생성되게 한 것이다. 맨 뒤의 public은 submodule이 추가되는 경로를 설정한 것이다. 현재 public 디렉터리가 존재하지 않으므로 새로 생성되면서 리모트 저장소와 연결된 git의 submodule이 추가된다.</p>
+</li>
+<li>
+<p><code>$ git remote -v</code>를 hugo-blog와 public에서 실행해보면 각 로컬 저장소에 연동된 리모트 저장소의 URL이 다르게 나오는 것을 볼 수 있다. 이를 통해 submodule이 잘 설치된 것을 확인할 수 있다.</p>
+</li>
+</ul>
+<h3 id="6-build">6. Build</h3>
+<ul>
+<li>cd 명령어로 <code>/hugo-blog/</code>로 이동한 후, <code>hugo -t 테마-이름</code>을 실행한다. 내가 선택한 테마 파일을 적용해서 빌드하는 명령어다.</li>
+<li><code>./public/</code> 디렉터리를 확인해서 빌드가 잘 되었는지 확인해보자.</li>
+</ul>
+<h3 id="7-git-repository-push">7. Git Repository Push</h3>
+<p>이제 로컬에서의 작업은 끝났다. 빌드된 <code>./public/</code> 내부의 파일들은 username.github.io 저장소에 push 하면 자동으로 배포 작업을 해준다.
+<code>/hugo-blog/</code>의 원본 소스들은 hugo-blog 저장소에 push 해서 소스 관리를 해준다.
+submodule인 <code>./public/</code>을 먼저 push 해야 충돌 오류 메시지를 확인하는 일이 없을 것이다.</p>
+<ul>
+<li><code>./public/</code>으로 이동하여 <code>$ git status</code> , <code>$ git add .</code>, <code>$ git commit -m &quot;메시지&quot;</code>, <code>$ git push origin main</code> 순서로 명령어를 실행한다. 별 문제가 없다면 30초 정도 뒤에 username.github.io에 접속하여 배포된 모습을 확인할 수 있을 것이다.</li>
+<li><code>/hugo-blog/</code>로 이동하여 같은 순서로 명령어를 실행하여 리모트 저장소에 코드를 push 한다.</li>
+</ul>
+<h3 id="8-쉘-스크립트를-이용한-자동화">8. 쉘 스크립트를 이용한 자동화</h3>
+<p>포스팅을 할 때마다 위의 과정을 손으로 하나씩 타이핑해서 처리하기에는 여러가지 불편한 점이 많다. 다행히 쉘 스크립트를 활용해서 빌드 및 배포 과정을 자동화하여 해결할 수 있다.
+(GitHub Action을 사용하는 방식도 존재한다. Click to go)
+아래의 코드를 <code>deploy.sh</code>로 저장하여 <code>/hugo-blog/</code>에 위치시키고 <code>/hugo-blog/</code>로 경로이동하여 <code>$ ./deploy.sh</code>를 실행해보자.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Build the project.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># hugo -t &lt;테마이름&gt;</span>
+</span></span><span class="line"><span class="cl">hugo -t hugo-theme-stack
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># username.github.io 저장소로 push 하기 위해 경로이동</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> public
+</span></span><span class="line"><span class="cl"><span class="c1"># 충돌 방지를 위해 한번 pull</span>
+</span></span><span class="line"><span class="cl">git pull origin main
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># git 내용들 추가</span>
+</span></span><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Commit 바꾸기. git commit -m &#34;원하는 커밋 메세지&#34;를 입력하거나</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># git commit만 입력시 커밋날짜를 메세지로 자동설정</span>
+</span></span><span class="line"><span class="cl"><span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;rebuilding site `date`&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -eq <span class="m">1</span> <span class="o">]</span>
+</span></span><span class="line"><span class="cl">  <span class="k">then</span> <span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;</span><span class="nv">$msg</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># username.github.io 저장소에 push</span>
+</span></span><span class="line"><span class="cl">git push origin main
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 상위 폴더인 hugo-blog도 push를 위해 경로이동</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ..
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># hugo-blog 저장소 Commit &amp; Push</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 충돌 방지를 위해 한번 pull</span>
+</span></span><span class="line"><span class="cl">git pull origin main
+</span></span><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;rebuilding site `date`&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -eq <span class="m">1</span> <span class="o">]</span>
+</span></span><span class="line"><span class="cl">  <span class="k">then</span> <span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;</span><span class="nv">$msg</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git push origin main
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>자동화 코드는 <a href="https://gowoonsori.com/projects/start-hugo/" target="_blank" rel="noopener noreffer ">고운소리님의 블로그</a>를 참조하여 수정했다.</p>
+<hr>
+<h2 id="마치며">마치며</h2>
+<p>비전공자로 학원이나 부트캠프 등을 다니지 않고 독학으로 개발 공부를 하고 있는 입장에서 가장 아쉬움을 느끼는 것은 소통환경의 부재였다. 물론 온라인이 아니라 오프라인 환경을 말하는 것이다. 학원이나 부트캠프에서는 프로젝트를 개발하는 과정 중에 발생하는 수많은 종류의 어려움과 예상할 수 없이 터져나오는 에러 메시지의 해결을 위해서 기술적으로나 정신적으로나 자문을 요청할 선배들이 근처에 있지만, 주변에 딱히 지인도 없이 혼자 공부하는 나에게 있어서는 그 모든 문제들의 해결은 오직 구글링과 삽질을 통해서 만이 가능했던 것 같다.
+그러다보니 조금이나마 쌓인 지식들을 그냥 나 혼자 알고 넘어갈 생각을 하니 힘겹게 구글링을 하고 삽질을 하던 시간들이 순식간에 날아가는 것 같아 너무 아까웠다. 게다가 한창 삽질하고 있을 나와 같은 사람들을 떠오르면서 조금이나마 도움이 될 수 있다면 좋겠다는 생각이 들었다.
+나 또한 구글링을 통해 잘 맞는 솔루션을 발견할 때면 문제 해결을 통해 차오르는 기쁨과 소스 기여자에 대한 고마움이 내 마음 속에 매번 쌓여나가고 있다는 것을 알고 있었기에 앞으로 내가 이 블로그에 게시하는 글들이 그와 같은 역할을 할 수 있기를 바란다.
+앞으로 블로그를 운영해가면서 커스터마이징을 하는 과정들도 좀 더 정리해볼 계획이다.</p>
+<hr>
+<h2 id="도움받은-블로그">도움받은 블로그</h2>
+<p><a href="https://ryan-han.com/post/dev/creating_static_blog/" target="_blank" rel="noopener noreffer ">Integerous님 블로그</a><br>
+<a href="https://gowoonsori.com/projects/start-hugo/" target="_blank" rel="noopener noreffer ">고운소리님 블로그</a><br>
+<a href="https://ialy1595.github.io/post/blog-construct-2/" target="_blank" rel="noopener noreffer ">IALY님 블로그</a><br>
+<a href="https://taetaetae.github.io/posts/blog-reorganization-by-hugo/" target="_blank" rel="noopener noreffer ">taetaetae님 블로그</a></p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-08-06&nbsp;<a class="git-hash" href="www.github.com/MintZzz1009/commit/8496a7641252160a4f20be8f849bc2816ca0423d" target="_blank" title="commit by Haksoo-Ji(mintzzz1009@gmail.com) 8496a7641252160a4f20be8f849bc2816ca0423d: (contents) [Hugo-blog]">
+                                    <i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>8496a76</a></span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/hugo-blog/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://MintZzz1009.github.io/hugo-blog/" data-title="[Hugo-blog] Hugo, GitHub Pages로 블로그 만들기" data-via="https://twitter.com/MintZzz1009" data-hashtags="hugo,blog,static-site,submodule,github pages,markdown"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://MintZzz1009.github.io/hugo-blog/" data-hashtag="hugo"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://MintZzz1009.github.io/hugo-blog/" data-title="[Hugo-blog] Hugo, GitHub Pages로 블로그 만들기"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://MintZzz1009.github.io/hugo-blog/" data-title="[Hugo-blog] Hugo, GitHub Pages로 블로그 만들기"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://MintZzz1009.github.io/hugo-blog/" data-title="[Hugo-blog] Hugo, GitHub Pages로 블로그 만들기" data-image="hugo.jpg"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/hugo/">hugo</a>,&nbsp;<a href="/tags/blog/">blog</a>,&nbsp;<a href="/tags/static-site/">static-site</a>,&nbsp;<a href="/tags/submodule/">submodule</a>,&nbsp;<a href="/tags/github-pages/">github pages</a>,&nbsp;<a href="/tags/markdown/">markdown</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.101.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/MintZzz1009" target="_blank">Haksoo-Ji</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/mermaid/mermaid.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"Comment","lightTheme":"github-light","repo":"MintZzz1009/blog-comments"}},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"graph LR;\n    A(기본 골조 구성) --\u003e B(테마 적용)\n    B --\u003e C(컨텐츠 생성)\n    C --\u003e D(빌드)\n    D --\u003e E(배포)"},"lightgallery":true,"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

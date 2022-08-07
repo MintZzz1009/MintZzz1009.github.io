@@ -1,10 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>submodule - Tag - MintZzz DevLog</title>
-        <link>http://MintZzz1009.github.io/tags/submodule/</link>
-        <description>submodule - Tag - MintZzz DevLog</description>
+        <title>static-site - Tag - MintZzz DevLog</title>
+        <link>http://MintZzz1009.github.io/tags/static-site/</link>
+        <description>static-site - Tag - MintZzz DevLog</description>
         <generator>Hugo -- gohugo.io</generator><language>ko</language><managingEditor>mintzzz1009@gmail.com (Haksoo-Ji)</managingEditor>
-            <webMaster>mintzzz1009@gmail.com (Haksoo-Ji)</webMaster><lastBuildDate>Thu, 04 Aug 2022 21:54:02 &#43;0900</lastBuildDate><atom:link href="http://MintZzz1009.github.io/tags/submodule/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>mintzzz1009@gmail.com (Haksoo-Ji)</webMaster><lastBuildDate>Thu, 04 Aug 2022 21:54:02 &#43;0900</lastBuildDate><atom:link href="http://MintZzz1009.github.io/tags/static-site/" rel="self" type="application/rss+xml" /><item>
     <title>[Hugo-blog] Hugo, GitHub Pages로 블로그 만들기</title>
     <link>http://MintZzz1009.github.io/hugo-blog/</link>
     <pubDate>Thu, 04 Aug 2022 21:54:02 &#43;0900</pubDate>
