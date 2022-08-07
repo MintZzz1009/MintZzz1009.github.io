@@ -11,7 +11,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://MintZzz1009.github.io/hugo-blog/" /><meta property="og:image" content="http://MintZzz1009.github.io/images/sky_logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-08-04T21:54:02+09:00" />
-<meta property="article:modified_time" content="2022-08-06T17:55:11+09:00" /><meta property="og:site_name" content="MintZzz&#39;s DevLog" />
+<meta property="article:modified_time" content="2022-08-07T13:07:05+09:00" /><meta property="og:site_name" content="MintZzz&#39;s DevLog" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://MintZzz1009.github.io/images/sky_logo.png"/>
@@ -35,7 +35,7 @@
             "@type": "WebPage",
             "@id": "http:\/\/MintZzz1009.github.io\/hugo-blog\/"
         },"image": ["http:\/\/MintZzz1009.github.io\/images\/param_seo.png"],"genre": "posts","keywords": "hugo, blog, static-site, submodule, github pages, markdown","wordcount":  6712 ,
-        "url": "http:\/\/MintZzz1009.github.io\/hugo-blog\/","datePublished": "2022-08-04T21:54:02+09:00","dateModified": "2022-08-06T17:55:11+09:00","publisher": {
+        "url": "http:\/\/MintZzz1009.github.io\/hugo-blog\/","datePublished": "2022-08-04T21:54:02+09:00","dateModified": "2022-08-07T13:07:05+09:00","publisher": {
             "@type": "Organization",
             "name": "Haksoo Ji","logo": "http:\/\/MintZzz1009.github.io\/images\/avatar_hood-T-shirt.jpg"},"author": {
                 "@type": "Person",
@@ -43,7 +43,7 @@
             },"description": ""
     }
     </script></head>
-    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
@@ -137,19 +137,19 @@
                     <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
+  <ol>
     <li><a href="#hugo---정적-사이트-생성기-static-site-generators">HUGO - 정적 사이트 생성기 (Static Site Generators)</a></li>
     <li><a href="#기본-개념">기본 개념</a></li>
     <li><a href="#hugo-설치">Hugo 설치</a></li>
     <li><a href="#들어가기-전-알아야-할-hugo와-git의-기능들">들어가기 전 알아야 할 Hugo와 Git의 기능들</a>
-      <ul>
+      <ol>
         <li><a href="#themes-디렉터리">themes 디렉터리</a></li>
         <li><a href="#public-디렉터리">public 디렉터리</a></li>
         <li><a href="#submodule과-push">Submodule과 Push</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#process-a-id-pub-procesa">Process <a id= "pub-proces"></a></a>
-      <ul>
+      <ol>
         <li><a href="#1-프로젝트-생성">1. 프로젝트 생성</a></li>
         <li><a href="#2-테마-다운로드">2. 테마 다운로드</a></li>
         <li><a href="#3-configtomlor-yaml-json-수정">3. config.toml(or yaml, json) 수정</a></li>
@@ -158,11 +158,11 @@
         <li><a href="#6-build">6. Build</a></li>
         <li><a href="#7-git-repository-push">7. Git Repository Push</a></li>
         <li><a href="#8-쉘-스크립트를-이용한-자동화">8. 쉘 스크립트를 이용한 자동화</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#마치며">마치며</a></li>
     <li><a href="#도움받은-블로그">도움받은 블로그</a></li>
-  </ul>
+  </ol>
 </nav></div>
             </div><div class="content" id="content"><p>기술 블로그를 통해 내가 배우는 내용 등을 한번 더 정리하는 것이 꼭 필요하다는 사실을 알았다. 여러가지 블로그들이 있지만 기술 블로그로 활용하기에 가장 효율적이고 적절한 것은 무엇일까 구글링을 하면서 다른 분들의 블로그도 많이 참조하였다. 그렇게 최종적으로 결정한 방법은 Hugo라는 Static Site generator를 활용하는 것이었다.
 이번 포스팅에서는 내가 여러 시행착오와 구글링을 통해 나름대로 이해하게 된 Hugo를 활용한 정적 사이트(static site) 개발과 배포 방법에 대한 내용을 정리해보고자 한다.</p>
@@ -607,8 +607,8 @@ submodule인 <code>./public/</code>을 먼저 push 해야 충돌 오류 메시�
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2022-08-06&nbsp;<a class="git-hash" href="www.github.com/MintZzz1009/commit/8496a7641252160a4f20be8f849bc2816ca0423d" target="_blank" title="commit by Haksoo-Ji(mintzzz1009@gmail.com) 8496a7641252160a4f20be8f849bc2816ca0423d: (contents) [Hugo-blog]">
-                                    <i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>8496a76</a></span>
+                <span>Updated on 2022-08-07&nbsp;<a class="git-hash" href="www.github.com/MintZzz1009/commit/7fa86e162a6afb3ddc303f1e253dc6fafe0f67f1" target="_blank" title="commit by Haksoo-Ji(mintzzz1009@gmail.com) 7fa86e162a6afb3ddc303f1e253dc6fafe0f67f1: (content) hugo-blog">
+                                    <i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>7fa86e1</a></span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
