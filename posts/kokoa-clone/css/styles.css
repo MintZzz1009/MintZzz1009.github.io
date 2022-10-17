@@ -1,0 +1,84 @@
+@import "reset.css";
+@import "variables.css";
+
+/* Font */
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Fredoka+One&family=Kalam:wght@300;400;700&family=Mitr:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Permanent+Marker&family=Rubik+Dirt&display=swap");
+
+/* Components */
+@import "components/status-bar.css";
+@import "components/nav-bar.css";
+@import "components/screen-header.css";
+@import "components/alt-screen-header.css";
+@import "components/user-component.css";
+@import "components/badge.css";
+@import "components/openchat-component.css";
+@import "components/icons-row.css";
+@import "components/icons-animation.css";
+@import "components/settings-lists.css";
+@import "components/splash-screen.css";
+@import "components/no-mobile.css";
+
+/* Screen */
+@import "screen/welcome.css";
+@import "screen/login.css";
+@import "screen/friends.css";
+@import "screen/find.css";
+@import "screen/more.css";
+@import "screen/settings.css";
+@import "screen/chat.css";
+
+body {
+  font-family: "Open Sans", sans-serif;
+  height: 120vh;
+  background-color: black;
+  animation: twinkle-twinkle 0.8s ease-in-out 1 2s;
+}
+
+.main-screen {
+  padding: 0 var(--horizontal-space);
+  height: 120vh;
+  overflow: hidden;
+}
+
+#void1 {
+  height: 110px;
+}
+
+#void2 {
+  height: 80px;
+}
+
+.main-screen::before {
+  position: absolute;
+  top: 0;
+  left: -500px;
+  content: "";
+  z-index: -2;
+  display: block;
+  width: 150px;
+  height: 100%;
+  transform: skewX(-40deg);
+  background-color: rgba(150, 156, 156, 0.6);
+  animation: pass 0.8s ease-in-out 1 2s;
+}
+
+@keyframes pass {
+  from {
+    transform: skewX(-40deg) translateX(0);
+  }
+  to {
+    transform: skewX(-40deg) translateX(1500px);
+  }
+}
+
+@keyframes twinkle-twinkle {
+  0% {
+    background-color: black;
+  }
+  50% {
+    background-color: rgba(50, 50, 50);
+  }
+  100% {
+    background-color: black;
+  }
+}

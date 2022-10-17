@@ -1,0 +1,6 @@
+.settings-screen__section {
+  padding: 15px 0px;
+  border-bottom: 1px solid var(--horizontal-line-color);
+  color: var(--font-light-color);
+  animation: lighter 0.8s ease-in-out 1 2s forwards;
+}

@@ -1,0 +1,21 @@
+.welcome-header {
+  color: var(--font-light-color);
+  margin: 75px 0px;
+  margin-bottom: 60px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: lighter 0.8s ease-in-out 2s forwards;
+}
+
+.welcome-header__title {
+  margin-bottom: 35px;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.welcome-header__text {
+  width: 70%;
+  opacity: 0.7;
+}

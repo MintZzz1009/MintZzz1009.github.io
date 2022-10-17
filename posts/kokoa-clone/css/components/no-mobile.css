@@ -1,0 +1,51 @@
+#no-mobile {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 99;
+  background-image: url(https://static.jutarnji.hr/images/slike/2020/10/30/k_9195707_640.jpg);
+  background-color: goldenrod;
+  background-size: cover;
+  background-position: center;
+  font-family: "Kalam", cursive;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+#no-mobile h1 {
+  width: 70%;
+  line-height: 40px;
+  padding: 20px 20px;
+  margin-bottom: 50px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+#no-mobile p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+}
+#no-mobile span:nth-child(2) {
+  width: 300px;
+  padding: 20px 10px;
+  border-right: 3px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+#no-mobile span:not(:nth-child(2)) {
+  font-size: 70px;
+}
+
+@media screen and (max-width: 500px) {
+  #no-mobile {
+    display: none;
+  }
+}

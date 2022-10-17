@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Kokoa Talk</title>
+  </head>
+  <body>
+    <div class="status-bar">
+      <div class="status-bar__column">
+        <span>No Service</span>
+        <i class="fa-solid fa-wifi"></i>
+      </div>
+      <div class="status-bar__column">
+        <span>18:43</span>
+      </div>
+      <div class="status-bar__column">
+        <span>110%</span>
+        <i class="fa-solid fa-battery-full fa-lg"></i>
+        <i class="fa-solid fa-bolt-lightning"></i>
+      </div>
+    </div>
+    <main class="main-screen">
+      <header class="welcome-header">
+        <h1 class="welcome-header__title">Welcome to Kokoa Clone</h1>
+        <p class="welcome-header__text">
+          If you have a Kokoa Account, <br />log in with your email or phone
+          number.
+        </p>
+      </header>
+
+      <form action="friends.html" method="get" id="login-form">
+        <input type="text" required placeholder="Email or phone number" />
+        <input type="password" required placeholder="Password" />
+        <input type="submit" value="Log In" />
+        <input type="submit" disabled value="Sign Up" />
+        <a href="#">Find Kokoa account or Password</a>
+      </form>
+    </main>
+
+    <div id="splash-screen" class="gr1"></div>
+
+    <div id="no-mobile">
+      <h1>
+        Reduce the screen until the length of between these arrows is equal to
+        the TEXT here.
+      </h1>
+      <p><span>➡️</span><span>resize up to here!</span><span>⬅️</span></p>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/ec13307674.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

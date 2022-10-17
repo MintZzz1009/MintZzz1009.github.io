@@ -1,0 +1,81 @@
+.openchat-component {
+  display: flex;
+  justify-content: space-between;
+  height: 95px;
+  margin-bottom: 25px;
+  animation: lighter 0.8s ease-in-out 2s forwards;
+}
+
+.openchat-component__column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.openchat-component__photo {
+  width: 95px;
+  height: 95px;
+  border-radius: 10px;
+}
+
+.openchat-component__avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 8px;
+}
+
+.openchat-component__title {
+  font-size: 20px;
+  padding: 3px 0;
+}
+
+.openchat-component__tags {
+  width: 100%;
+  padding: 2px 0;
+  font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.openchat-component__info {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.openchat-component__info span {
+  padding: 0px 7px;
+  height: 15px;
+  line-height: 15px;
+}
+
+.openchat-component__state {
+  padding: 5px;
+  background-color: rgb(255, 255, 255);
+  border-bottom-right-radius: 10px;
+  border: 2px solid var(--font-light-color);
+  color: rgb(255, 0, 179);
+}
+
+.openchat-component__column:first-child {
+  width: 300px;
+}
+
+.openchat-component__column:last-child {
+  position: relative;
+}
+
+.openchat-component__like {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: white;
+  font-size: 12px;
+  font-weight: 400;
+}

@@ -1,0 +1,50 @@
+#splash-screen {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 98;
+  background-color: rgb(0, 185, 105);
+  background-size: cover;
+  background-position: center;
+  animation: splash-screen 0.8s ease-in-out 1.2s forwards;
+}
+
+.nd {
+  background-image: url(https://pbs.twimg.com/media/E9VMuMHXoAo8SAh?format=jpg&name=small);
+}
+.dd {
+  background-image: url(https://pbs.twimg.com/media/FDNkISIXMAMA3uB?format=jpg&name=large);
+}
+.md {
+  background-image: url(https://pbs.twimg.com/media/FDNkIS0XoBA8xkp?format=jpg&name=large);
+}
+.hb {
+  background-image: url(https://pbs.twimg.com/media/E9VCnYTWEAMMYlV?format=jpg&name=small);
+}
+.gr1 {
+  background-image: url(https://i.ytimg.com/vi/C9CF6avvGnA/maxresdefault.jpg);
+}
+.gr2 {
+  background-image: url(https://image.bugsm.co.kr/essential/images/500/437/43785.jpg);
+}
+.gr3 {
+  background-image: url(https://mblogthumb-phinf.pstatic.net/MjAxNzA1MzFfMTc5/MDAxNDk2MjE0NDgwMjg4.L2yquhujiJJMKXxCy2xUUIJbUkLiusZRQRu0e35_bDMg.88Bsp1NcoD0relf1MgqSCd3G9eKid3Te7IcoM8JCbAcg.PNG.britishcouncilkorea/Gorillaz-characters.png?type=w800);
+}
+.gr4 {
+  background-image: url(https://obj-sg.thewiki.kr/data/476f72696c6c617a5f5068617365352e6a7067.jpg);
+}
+.gr5 {
+  background-image: url(https://pbs.twimg.com/media/FbqbbBHXoAAHqsU?format=jpg&name=4096x4096);
+}
+
+@keyframes splash-screen {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

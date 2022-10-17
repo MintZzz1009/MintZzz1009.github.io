@@ -1,0 +1,59 @@
+.badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: teal;
+  box-shadow: 2px 2px 3px black;
+  color: white;
+  font-size: small;
+  font-weight: 600;
+  animation: blingbling 1s linear infinite;
+}
+
+.badge-void {
+  background-color: teal;
+  box-shadow: 2px 2px 3px black;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  position: absolute;
+  right: 18px;
+  top: 10px;
+  animation: blingbling 1s linear infinite;
+}
+
+.dot-with-cog {
+  background-color: tomato;
+  right: 15px;
+  top: 18px;
+}
+
+@keyframes blingbling {
+  0% {
+    transform: skew(0, 0) scale(1) translateY(0px);
+    color: white;
+  }
+  25% {
+    transform: skew(-5deg, -5deg) scale(1.2) translate(-5px, -5px)
+      rotateY(60deg) rotateZ(30deg);
+    background-color: aquamarine;
+    color: black;
+  }
+  50% {
+    transform: skew(0, 0) scaleY(0.5) translateY(0px);
+    color: white;
+  }
+  75% {
+    transform: skew(5deg, 5deg) scale(1.2) translate(5px, -5px) rotateY(-60deg)
+      rotateZ(-30deg);
+    color: white;
+  }
+  100% {
+    transform: skew(0, 0) scale(1) translateY(0px);
+    background-color: quamarine;
+    color: black;
+  }
+}

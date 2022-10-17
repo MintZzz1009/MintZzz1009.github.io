@@ -1,0 +1,89 @@
+.icons-row {
+  display: flex;
+  justify-content: space-between;
+  height: 90px;
+  padding: 10px 10px;
+  color: white;
+}
+
+.icons-row a {
+  text-shadow: 2px 2px 5px magenta, 4px 4px 5px pink;
+  transition: all 0.3s ease-in-out;
+}
+
+.icons-row a:hover {
+  color: aquamarine;
+  transform: scale(1.2);
+}
+
+.icons-row__last-row {
+  margin-bottom: 10px;
+}
+
+.icons-row__last-row a {
+  transition: all 0.3s ease-in-out;
+}
+.icons-row:last-child a:hover {
+  color: rgb(255, 0, 212);
+  transform: scale(1.2);
+}
+
+.icons-row__icon {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 80px;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+.btn-icon {
+  width: 90px;
+  height: 100px;
+  justify-self: center;
+  align-items: center;
+  text-shadow: 2px 2px 5px yellow, 4px 4px 5px aqua;
+}
+
+.icons-row__icon i {
+  font-size: 30px;
+  padding: 15px 0;
+}
+
+.btn-icon i {
+  display: block;
+  width: 70px;
+  height: 70px;
+  padding: 0;
+  border-radius: 15px;
+  line-height: 70px;
+}
+
+.icons-row__icon span {
+  display: flex;
+  flex-direction: column;
+}
+
+.find__icons {
+  box-sizing: content-box;
+  text-shadow: 2px 2px 3px rgb(38, 255, 0), 3px 3px 5px rgb(0, 251, 255);
+  border-radius: 10px;
+  border-bottom: 5px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 2px 5px rgb(255, 255, 255);
+  background-color: rgba(112, 22, 177, 0.8);
+
+  transition: all 0s step-start;
+}
+
+.find__icons i {
+  padding: 10px 0px;
+}
+
+.find__icons:hover {
+  color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  border-bottom: none;
+  box-shadow: inset 0px 0px 5px white;
+  background-color: rgba(76, 0, 130, 0.7);
+  transform: scale(1) translate(3px, 3px);
+}

@@ -1,0 +1,59 @@
+#login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 26px;
+  animation: lighter 0.8s ease-in-out 2s forwards;
+}
+
+#login-form input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px 5px;
+  margin: 5px 0px;
+  border: none;
+  font-size: 17px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  border-bottom: 3px solid var(--font-light-color);
+  transition: border-color 0.3s ease-in-out;
+  animation: lighter 0.8s ease-in-out 2s forwards;
+}
+
+#login-form input::placeholder {
+  color: var(--font-light-color);
+  animation: lighter 0.8s ease-in-out 2s forwards;
+}
+
+#login-form input:not([type="submit"]):focus {
+  border-color: blueviolet;
+}
+
+#login-form input[type="submit"] {
+  position: relative;
+  margin-top: 35px;
+  padding: 17px 0px;
+  border-radius: 5px;
+  border: none;
+  background-color: indigo;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+#login-form input[type="submit"]:hover {
+  background-color: magenta;
+}
+
+#login-form input[value="Sign Up"] {
+  margin-top: 2px;
+  background-color: var(--font-light-color);
+  cursor: not-allowed;
+}
+
+#login-form a {
+  color: var(--font-light-color);
+  text-decoration: none;
+  padding-top: 25px;
+  font-size: 14px;
+  animation: lighter 0.8s ease-in-out 2s forwards;
+}

@@ -1,0 +1,298 @@
+.chat-body {
+  height: 850px;
+  background-position: center 55px; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+  background-color: black;
+  background-attachment: fixed;
+  font-family: "Kalam", cursive;
+}
+
+#murdoc {
+  background-image: url(https://cdn.25gramos.com/wp-content/uploads/sites/7/2021/04/fred-perry-gorillaz-fleek-3.jpg);
+}
+
+#hobbs {
+  background-image: url(https://cdn.25gramos.com/wp-content/uploads/sites/7/2021/04/fred-perry-gorillaz-fleek-4.jpg);
+}
+
+#two-d {
+  background-image: url(https://cdn.25gramos.com/wp-content/uploads/sites/7/2021/04/fred-perry-gorillaz-fleek-2.jpg);
+}
+
+#noodle {
+  background-image: url(https://cdn.25gramos.com/wp-content/uploads/sites/7/2021/04/fred-perry-gorillaz-fleek-1.jpg);
+}
+
+.chatting-screen {
+  display: flex;
+  flex-direction: column;
+  padding: 200px 20px;
+  height: 900px;
+}
+
+.chat__time-stamp {
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+  color: white;
+  padding: 10px 20px;
+  margin-bottom: 50px;
+  border-radius: 210px;
+  background-color: rgba(51, 51, 51, 0.7);
+}
+
+.chat__time-stamp i {
+  margin-right: 10px;
+}
+
+.message-row {
+  display: flex;
+}
+
+.message-row__avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  margin-right: 10px;
+}
+
+.message-row__author {
+  font-weight: bold;
+}
+
+.message-row__message {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.message-row__message-bubble {
+  position: relative;
+  width: fit-content;
+  padding: 10px 15px;
+  margin-top: 10px;
+  background-color: #333;
+  color: white;
+  border-radius: 10px;
+}
+
+.message-row__message .message-row__message-bubble::before {
+  display: block;
+  position: absolute;
+  top: 2px;
+  z-index: -1;
+}
+
+.ch-others .message-row__message-bubble::before {
+  left: -3px;
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-top: 20px solid transparent;
+  border-left: 20px solid #333;
+  transform: rotateZ(-20deg) skew(10deg, 10deg);
+}
+
+.message-row__message-time {
+  align-self: flex-end;
+  font-size: 12px;
+  font-weight: bold;
+  color: #666;
+  margin: 0 5px;
+}
+
+.ch-yours .message-row__message-bubble {
+  background-color: gold;
+  color: black;
+}
+
+.ch-yours {
+  flex-direction: row-reverse;
+}
+
+.ch-yours .message-row__message-bubble::before {
+  right: -3px;
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-top: 20px solid transparent;
+  border-right: 20px solid gold;
+  transform: rotateZ(20deg) skew(-10deg, -10deg);
+}
+
+.ch-noodle .message-row__message-bubble {
+  background-color: magenta;
+  color: white;
+}
+.ch-noodle .message-row__message-bubble::before {
+  border-right-color: magenta;
+}
+
+.ch-murdoc .message-row__message-bubble {
+  background-color: blueviolet;
+  color: white;
+}
+.ch-murdoc .message-row__message-bubble::before {
+  border-right-color: blueviolet;
+}
+
+.ch-2d .message-row__message-bubble {
+  background-color: dodgerblue;
+  color: white;
+}
+.ch-2d .message-row__message-bubble::before {
+  border-right-color: dodgerblue;
+}
+
+.ch-hobbs .message-row__message-bubble {
+  background-color: saddlebrown;
+  color: white;
+}
+.ch-hobbs .message-row__message-bubble::before {
+  border-right-color: saddlebrown;
+}
+
+.write-message {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 15px;
+  border: 5px solid rgba(102, 102, 102, 0.7);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: black;
+  transform: translateY(0px);
+  transition: all 0.3s ease-in-out;
+}
+
+.write-message > span i {
+  font-size: 40px;
+  color: red;
+  margin-right: 15px;
+}
+
+.write-message__text {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 2px 5px;
+  border: 2px solid red;
+  border-radius: 30px;
+  background-color: black;
+}
+
+.write-message__input {
+  width: 80%;
+  height: 40px;
+  margin-left: 5px;
+  font-family: "Kalam", cursive;
+  font-size: 20px;
+  color: white;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  transition: all 0.5s ease-in-out;
+}
+
+.write-message__icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80px;
+  font-size: 30px;
+  color: red;
+  margin-left: 5px;
+}
+
+.write-message__icons span {
+  text-align: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+}
+
+#emoji {
+  transform: rotateZ(90deg);
+  cursor: pointer;
+  animation: ottugi 1s ease-in-out 0.2s infinite;
+}
+
+#search {
+  display: block;
+  font-size: 40px;
+}
+
+#send {
+  display: none;
+  background-color: red;
+  color: white;
+  font-size: 20px;
+  margin-left: 5px;
+  cursor: pointer;
+  animation: ready 1s ease-in-out 0.2s infinite;
+}
+
+.write-message__icons span i {
+  line-height: 38px;
+}
+
+.write-message::after {
+  content: "";
+  display: block;
+  width: 495px;
+  height: 423px;
+  box-sizing: border-box;
+  border: 5px solid rgba(102, 102, 102, 0.7);
+  border-top: none;
+  background-color: #333;
+  background-image: url("../../img/ios-keyboard(en).jpg");
+  background-size: cover;
+  position: absolute;
+  top: 75px;
+}
+
+.write-message:focus-within {
+  transform: translateY(-422px);
+}
+.write-message:focus-within #plus,
+.write-message:focus-within #search {
+  display: none;
+}
+.write-message:focus-within #send {
+  display: block;
+  background-color: red;
+  color: white;
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+@keyframes ready {
+  0% {
+    transform: scale(1) translateY(0px);
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2) translateY(-70px);
+    opacity: 0;
+  }
+}
+
+@keyframes ottugi {
+  0% {
+    transform: rotateZ(90deg);
+  }
+  50% {
+    transform: rotateZ(-90deg);
+  }
+  100% {
+    transform: rotateZ(90deg);
+  }
+}

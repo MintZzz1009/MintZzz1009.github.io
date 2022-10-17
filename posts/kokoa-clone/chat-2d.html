@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat with 2D - Kokoa Talk</title>
+  </head>
+  <body class="chat-body" id="two-d">
+    <div class="status-bar">
+      <div class="status-bar__column">
+        <span>No Service</span>
+        <i class="fa-solid fa-wifi"></i>
+      </div>
+      <div class="status-bar__column">
+        <span>18:43</span>
+      </div>
+      <div class="status-bar__column">
+        <span>30%</span>
+        <i class="fa-solid fa-battery-full fa-xl"></i>
+        <i class="fa-solid fa-bolt-lightning"></i>
+      </div>
+    </div>
+
+    <div class="alt-screen-header">
+      <div class="alt-screen-header__column" id="sup-center">
+        <span>
+          <a href="chats.html"><i class="fa-solid fa-chevron-left"></i></a>
+        </span>
+      </div>
+
+      <div class="alt-screen-header__column">
+        <h1>2D</h1>
+      </div>
+      <div class="alt-screen-header__column">
+        <span>
+          <a href="#">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </a>
+          <a href="#">
+            <i class="fa-solid fa-bars"></i>
+          </a>
+        </span>
+      </div>
+    </div>
+
+    <main class="chatting-screen">
+      <div class="chat__time-stamp">
+        <i class="fa-solid fa-calendar-days"></i>Friday, October 14, 2022
+      </div>
+      <div class="message-row">
+        <img
+          src="https://pbs.twimg.com/media/FdRS6JhXoAAePH4?format=jpg&name=900x900"
+          class="message-row__avatar"
+        />
+        <div class="message-row__content">
+          <span class="message-row__author">2D</span>
+          <div class="message-row__message ch-others">
+            <span class="message-row__message-bubble">Did you know that?!</span>
+          </div>
+          <div class="message-row__message ch-others">
+            <span class="message-row__message-bubble"
+              >My real name is 'Stuart Harold Pot'!!!</span
+            >
+            <span class="message-row__message-time">10:10 AM</span>
+          </div>
+        </div>
+      </div>
+      <div class="message-row__message ch-yours ch-2d">
+        <span class="message-row__message-bubble"
+          >Wow, It's so gorgious :)</span
+        >
+        <span class="message-row__message-time">10:40 AM</span>
+      </div>
+      <div class="message-row">
+        <img
+          src="https://pbs.twimg.com/media/FdRS6JhXoAAePH4?format=jpg&name=900x900"
+          class="message-row__avatar"
+        />
+        <div class="message-row__content">
+          <span class="message-row__author">2D</span>
+          <div class="message-row__message ch-others">
+            <span class="message-row__message-bubble"
+              >I never really thought about anything as far as I can remember.
+            </span>
+          </div>
+          <div class="message-row__message ch-others">
+            <span class="message-row__message-bubble"
+              >My real name is 'Stuart Harold Pot'!!!</span
+            >
+            <span class="message-row__message-time">11:10 AM</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="write-message">
+      <span id="plus"><i class="fa-solid fa-square-plus"></i></span>
+      <div class="write-message__text">
+        <input
+          type="text"
+          class="write-message__input"
+          placeholder="Write a message..."
+        />
+        <div class="write-message__icons">
+          <span id="emoji"
+            ><i class="fa-solid fa-face-grin-squint-tears"></i
+          ></span>
+          <span id="search">⋕</span>
+          <span id="send"><i class="fa-solid fa-paper-plane"></i></span>
+        </div>
+      </div>
+    </div>
+    <div id="splash-screen" class="gr2 gr3 gr4 gr5"></div>
+
+    <div id="no-mobile">
+      <h1>
+        Reduce the screen until the length of between these arrows is equal to
+        the TEXT here.
+      </h1>
+      <p><span>➡️</span><span>resize up to here!</span><span>⬅️</span></p>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/ec13307674.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

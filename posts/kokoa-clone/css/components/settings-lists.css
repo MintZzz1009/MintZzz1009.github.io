@@ -1,0 +1,25 @@
+.settings-screen__list {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 10px;
+  font-size: 20px;
+  border-color: black;
+}
+
+.settings-screen__list:hover {
+  background-color: rebeccapurple;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border: 5px solid rgb(212, 152, 255);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.settings-screen__lists-column {
+  display: flex;
+}
+
+.settings-screen__lists-column h4 {
+  margin: 0px 10px 0px 20px;
+}

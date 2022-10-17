@@ -1,0 +1,33 @@
+.fa-gear {
+  transform: scale(1) translate(0,0) rotateZ(0deg);
+  text-shadow: 1px 1px 2px mediumslateblue;
+  transition: transform 0.5s ease-in-out;
+}
+
+.fa-heart {
+  color: deeppink;
+  animation: flip-twinkle 1s linear infinite;
+}
+
+@keyframes flip-twinkle {
+  0% {
+    transform: scale(1) rotateY(0deg);
+    color: deeppink;
+  }
+  25% {
+    transform: scale(0.8) rotateY(90deg);
+    color: rgba(255, 255, 255, 0.8);deeppink;
+  }
+  50% {
+    transform: scale(1.3) rotateY(180deg);
+    color: rgba(255, 20, 145, 0.8);
+  }
+  75% {
+    transform: scale(0.8) rotateY(270deg);
+    color: rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    transform: scale(1) rotateY(360deg);
+    color: deeppink;
+  }
+}

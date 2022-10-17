@@ -1,0 +1,44 @@
+.screen-header {
+  z-index: 2;
+  width: 100%;
+  padding: 20px var(--horizontal-space);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 27px;
+  background-color: rgb(0, 170, 170);
+  color: white;
+  font-family: "Bungee Spice", cursive;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-bottom: 5px solid rgb(0, 100, 100);
+}
+
+.screen-header__title {
+  padding: 0 5px;
+  border-radius: 10px;
+  background-color: rgb(0, 100, 100);
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.screen-header__icons {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  background-color: rgb(0, 100, 100);
+}
+
+.screen-header__icons span {
+  padding: 10px;
+}
+
+.screen-header__icons a {
+  padding: 10px 0px;
+}
+
+.screen-header__icons a:hover .fa-gear {
+  transform: scale(20) translate(-10.4px, 19px) rotateZ(360deg);
+}
